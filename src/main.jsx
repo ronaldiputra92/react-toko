@@ -15,8 +15,7 @@ import DarkModeContextProvider from "./context/DarkMode.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>Selamat siang kawan</div>,
-    errorElement: <ErrorPage />,
+    element: <LoginPage />,
   },
   {
     path: "/login",
