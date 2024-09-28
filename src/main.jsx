@@ -12,32 +12,40 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 import DarkModeContextProvider from "./context/DarkMode.jsx";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <LoginPage />,
-  },
-  {
-    path: "/login",
-    element: <LoginPage />,
-  },
-  {
-    path: "/register",
-    element: <RegisterPage />,
-  },
-  {
-    path: "/products",
-    element: <ProductPage />,
-  },
-  {
-    path: "/profile",
-    element: <ProfilePage />,
-  },
-  {
-    path: "/product/:id",
-    element: <DetailProductPage />,
-  },
-]);
+const basename = "/react-toko";
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <LoginPage />,
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "/register",
+      element: <RegisterPage />,
+    },
+    {
+      path: "/products",
+      element: <ProductPage />,
+    },
+    {
+      path: "/profile",
+      element: <ProfilePage />,
+    },
+    {
+      path: "/product/:id",
+      element: <DetailProductPage />,
+    },
+    {
+      path: "*",
+      element: <ErrorPage />,
+    },
+  ],
+  { basename }
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
